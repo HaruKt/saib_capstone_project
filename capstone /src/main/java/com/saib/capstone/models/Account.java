@@ -1,4 +1,4 @@
-package com.saib.models;
+package com.saib.capstone.models;
 
 import java.time.LocalDateTime;
 

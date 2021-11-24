@@ -1,4 +1,4 @@
-package com.saib.exceptions;
+package com.saib.capstone.exceptions;
 
 import java.time.LocalDateTime;
 

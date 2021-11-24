@@ -1,4 +1,4 @@
-package com.saib.config;
+package com.saib.capstone.config;
 
 import org.springframework.http.HttpStatus;
 
