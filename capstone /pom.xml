@@ -56,6 +56,12 @@
 		    <version>2.9.2</version>
 		</dependency>
 		
+		<dependency>
+            <groupId>io.sentry</groupId>
+            <artifactId>sentry-spring-boot-starter</artifactId>
+            <version>5.4.2</version>
+       </dependency>
+		
 	</dependencies>
 
       
@@ -68,5 +74,7 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	
 
 </project>
