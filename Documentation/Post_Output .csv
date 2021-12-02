@@ -1,0 +1,7 @@
+"transaction_id","from_account","to_account","from_account_name","to_account_name","same_bank_transaction","other_bank","amount","date","time","transaction_type","status"
+113523100,1101103,10010022,"ALEX","sam",True,"no",5000,"08:58:53.921000+03:00","08:58:53.921000+03:00","credit","active"
+1135231111,1101144,100104222,"Jasmin","Emaan",True,"no",5000,"08:58:53.921000+03:00","08:58:53.921000+03:00","credit","active"
+1135231201,1101154,100104232,"Lama","Hajar",True,"no",5000,"08:58:53.921000+03:00","08:58:53.921000+03:00","debit","active"
+1135231202,1101154,100104232,"Dalal","Amal",True,"no",5000,"08:58:53.921000+03:00","08:58:53.921000+03:00","debit","active"
+1135231203,1101154,100104237,"Rema","Hajar",True,"no",5000,"08:58:53.921000+03:00","08:58:53.921000+03:00","debit","active"
+1135231204,1101154,100104237,"Mohammad ","Maher",True,"no",5000,"08:58:53.921000+03:00","08:58:53.921000+03:00","credit","active"
