@@ -1,5 +1,6 @@
 package com.saib.capstone.services;
 import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +47,7 @@ public class TransactionService {
 		}
 		
 		//filtered by TransactionType
-		public List<Transaction> getByTransactionType(String transactionType)
+		public List<Transaction> findTransationByTransactionType(String transactionType)
 		{
 			List<Transaction> transaction=transactionReposetory.findTransationByTransactionType(transactionType);
 			return transaction;
@@ -54,7 +55,7 @@ public class TransactionService {
 		}
 		//
 		//filtered by date
-	    public List<Transaction> findTransactionByDate(LocalDateTime date)
+	    public List<Transaction> findTransactionByDate(LocalDate date)
 		{
 			List<Transaction> transaction=transactionReposetory.findTransactionByDate(date);
 			return transaction;
@@ -63,7 +64,7 @@ public class TransactionService {
 	
 		
 	    //filtered by date & TransactionType
-		public List<Transaction> getTransactionByDateTransactionType(LocalDateTime date,String transactionType)
+		public List<Transaction> findTransactionByDateAndTransactionType(LocalDate date,String transactionType)
 		{
 			List<Transaction> transaction=transactionReposetory.findTransactionByDateAndTransactionType(date,transactionType);
 			return transaction;

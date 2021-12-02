@@ -1,6 +1,7 @@
 //HTTP_Requests for Transaction
 package com.saib.capstone.controllers;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,6 +27,7 @@ import com.saib.capstone.util.Results;
 @RestController
 public class TransactionController
 {
+	
 	
 	@Autowired
 	TransactionService transactionService;
@@ -56,9 +58,9 @@ public class TransactionController
 	
 	//
 	@GetMapping("/transaction/transactionType/{transactionType}")
-	public ResponseEntity<ApiSuccessPayload> getByTransactionType(@PathVariable String transactionType) //GET - /Transaction/transactionType - Get me the filtered data only
+	public ResponseEntity<ApiSuccessPayload> findTransationByTransactionType(@PathVariable String transactionType) //GET - /Transaction/transactionType - Get me the filtered data only
 	{
-		List<Transaction> list = transactionService.getByTransactionType(transactionType);
+		List<Transaction> list = transactionService.findTransationByTransactionType(transactionType);
 		HttpStatus status=HttpStatus.OK;
 		ApiSuccessPayload payload=ApiSuccessPayload.build(list, "Transaction Found",status);
 		ResponseEntity<ApiSuccessPayload> response=new ResponseEntity<ApiSuccessPayload>(payload, status);
@@ -67,7 +69,7 @@ public class TransactionController
 	
 	//
 	@GetMapping("/transaction/date/{date}")
-	public ResponseEntity<ApiSuccessPayload> findTransactionByDate(@RequestParam @DateTimeFormat (pattern = "MMM dd yyyy HH:mm:ss")LocalDateTime date) //GET - Get me the filtered data only
+	public ResponseEntity<ApiSuccessPayload> findTransactionByDate(@RequestParam @DateTimeFormat (iso= DateTimeFormat.ISO.DATE) LocalDate date) //GET - Get me the filtered data only
 	{
 		List<Transaction> list = transactionService.findTransactionByDate(date);
 		
@@ -78,11 +80,11 @@ public class TransactionController
 	
 	
 	@GetMapping("/transaction/{transactionType}/{date}")
-	public ResponseEntity<ApiSuccessPayload> getTransactionByDateTransactionType     //GET - Get me the filtered data only
-	(@RequestParam @DateTimeFormat (pattern = "MMM dd HH:mm:ss")LocalDateTime date,
+	public ResponseEntity<ApiSuccessPayload> findTransactionByDateAndTransactionType     //GET - Get me the filtered data only
+	(@RequestParam @DateTimeFormat (iso= DateTimeFormat.ISO.DATE) LocalDate date,
 			@PathVariable String transactionType)
 	{
-		List<Transaction> list = transactionService.getTransactionByDateTransactionType(date,transactionType);
+		List<Transaction> list = transactionService.findTransactionByDateAndTransactionType(date,transactionType);
 		
 		ApiSuccessPayload payload=ApiSuccessPayload.build(list, "Success",HttpStatus.OK);
 		ResponseEntity<ApiSuccessPayload> response=new ResponseEntity<ApiSuccessPayload>(payload,HttpStatus.OK);

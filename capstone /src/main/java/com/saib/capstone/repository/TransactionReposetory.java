@@ -1,6 +1,6 @@
 package com.saib.capstone.repository;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,6 +12,6 @@ import com.saib.capstone.models.Transaction;
 public interface TransactionReposetory extends JpaRepository<Transaction,Long>
 {
 	public List<Transaction> findTransationByTransactionType(String transactionType);
-	public List<Transaction> findTransactionByDate(LocalDateTime date);
-	public List<Transaction> findTransactionByDateAndTransactionType(LocalDateTime date,String transactionType);
+	public List<Transaction> findTransactionByDate(LocalDate date);
+	public List<Transaction> findTransactionByDateAndTransactionType(LocalDate date,String transactionType);
 }
